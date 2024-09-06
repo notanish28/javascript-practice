@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Youtube Button</title>
+        <style>
+            button{
+                border: none;
+                background-color: black;
+                color: white;
+                border-radius: 20px;
+                padding: 10px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .is-subscribed{
+                background-color: rgb(214, 200, 200);
+                font-weight: bold;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Youtube Subscribe Button</h1>
+        <button onclick="clickChanger()">Subscribe</button>
+    </body>
+    <script>
+        function clickChanger(){
+            let firstClick = document.querySelector('button');
+
+            if(firstClick.innerHTML === 'Subscribe'){
+                firstClick.innerHTML = 'Subscribed';
+                firstClick.classList.add('is-subscribed');
+            }
+            else{
+                firstClick.innerHTML = 'Subscribe';
+                firstClick.classList.remove('is-subscribed');
+            }
+        }
+    </script>
+</html>

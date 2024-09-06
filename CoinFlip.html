@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Guess The Side</h1>
+        <button onclick="
+        const flipValue = Math.random();
+        const flip = flipValue < 0.5 ? 'Heads' : 'Tails';
+        const Guess = 'Heads';
+        let result = flip == Guess ? 'You Win' : 'You Lose';
+
+        alert(`You Guessed Heads. It is ${flip}. ${result}`);
+        ">Heads</button>
+        <button onclick="
+        const flipValue1 = Math.random();
+        const flip1 = flipValue1 < 0.5 ? 'Heads' : 'Tails';
+        const Guess1 = 'Tails';
+        let result1 = flip1 === Guess1 ? 'You Win' : 'You Lose';
+
+        alert(`You Guessed Tails. It is ${flip1}. ${result1}`);
+        ">Tails</button>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practise</title>
+    </head>
+    <body>
+        <button onclick="cartHandler(0)">Show Quantity</button>
+        <button onclick="cartHandler(1)">Add to Cart</button>
+        <button onclick="cartHandler(2)">+2</button>
+        <button onclick="cartHandler(3)">+3</button>
+        <button onclick="cartHandler(4)">+4</button>
+        <button onclick="cartHandler(5)">+5</button>
+        <button onclick="cartHandler(-1)">Remove From Cart</button>
+        <button onclick="cartHandler(-2)">-2</button>
+        <button onclick="cartHandler(-3)">-3</button>
+        <p class="js-result"></p>
+    </body>
+    <script>
+        let cartQuantity = 0;
+        function cartHandler(items){
+            
+            let result = document.querySelector('.js-result');
+
+            if(cartQuantity + Number(items) > 10){
+                result.innerHTML = 'Cart Already Full';
+                return;
+            }
+            if(cartQuantity + Number(items) < 0){
+                result.innerHTML = 'Not enough Items in the Cart';
+                return;
+            }
+
+            cartQuantity += Number(items);
+            result.innerHTML = `Cart Quantity : ${cartQuantity}`;
+        }
+    </script>
+</html>

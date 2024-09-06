@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Amazon Shipping</title>
+        <style>
+            .input-box{
+                font-size: 15px;
+                padding: 10px;
+            }
+
+            button{
+                font-size: 15px;
+                padding: 10px;
+                background-color: greenyellow;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Amazon Shipping Calculator</h1>
+        <p>Order Under $40 = +$10 shipping</p>
+        <p>Order Over $40 = free shipping</p>
+        <input type = 'number' placeholder = "Order Value" class = 'js-input input-box' 
+        onkeydown=" 
+            if(event.key === 'Enter'){
+                calculateTotal();
+        }"> 
+        <button onclick="calculateTotal()">Calculate</button>
+        <p class="js-totalCost"></p>
+
+        <script>
+            function calculateTotal(){
+                const result = document.querySelector('.js-input');
+                let cost = Number(result.value);
+
+                if (isNaN(cost) || cost <= 0) {
+                    document.querySelector('.js-totalCost').innerHTML = `Enter a valid order value`;
+                } else if (cost < 40) {
+                    cost += 10;
+                    document.querySelector('.js-totalCost').innerHTML = `$${cost} (including $10 shipping)`;
+                } else {
+                    document.querySelector('.js-totalCost').innerHTML = `$${cost} (free shipping)`;
+                }
+            }
+        </script>
+    </body>
+</html>

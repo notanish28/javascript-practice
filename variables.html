@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variables</title>
+    </head>
+
+    <body>
+        <button class = "por" onclick="show()">Show Cart</button>
+        <button class = "por" onclick="Add()">Add To Cart</button>
+        <button class = "por" onclick="Add2()">+2</button>
+        <button class = "por" onclick="Add3()">+3</button>
+        <button class = "por" onclick="Reset()">Reset Cart</button>
+    </body>
+    <script>
+        let sum = 0;
+        function show(){
+            console.log(`Cart Quantity : ${sum}`);
+        }
+        function Add(){
+            sum += 1;
+            console.log(`Cart Quantity : ${sum}`);
+        }
+        function Add2(){
+            sum += 2;
+            console.log(`Cart Quantity : ${sum}`);
+        }
+        function Add3(){
+            sum += 3;
+            console.log(`Cart Quantity : ${sum}`);
+        }
+        function Reset(){
+            sum = 0;
+            console.log(`Cart Quantity : ${sum}`);
+        }
+    </script>
+</html>

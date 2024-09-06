@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <button onclick = "document.querySelector('.js-text').innerHTML = 'You chose : heads';">heads</button>
+        <button onclick = "document.querySelector('.js-text').innerHTML = 'You chose : tails';">tails</button>
+        <p class="js-text"></p>
+
+        <input type="text" placeholder="Your Name" class="js-input" onkeydown="keyPress(event)">
+        <button onclick="nameDisplay()">Submit</button>
+        <p class="js-name"></p>
+
+        <input type="text" class="js-running" onkeyup="letGo(event)">
+        <p class="js-runningText"></p>
+    </body>
+    <script>
+        function nameDisplay(){
+            const name = document.querySelector('.js-input');
+            let nameMy = name.value;
+            document.querySelector('.js-name').innerHTML = `Your Name is : ${nameMy}`;
+        }
+
+        function keyPress(event){
+            if(event.key === 'Enter'){
+                nameDisplay();
+            }
+        }
+
+        function runningText(event){
+            const text = document.querySelector('.js-running');
+            let running = text.value;
+
+            document.querySelector('.js-runningText').innerHTML =  `${running}`;
+        }
+
+        function letGo(event){
+            runningText();
+        }
+    </script>
+</html>
